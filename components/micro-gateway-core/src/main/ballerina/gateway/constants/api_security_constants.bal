@@ -61,6 +61,9 @@
 
 @final public  string DESCRIPTION_SEPARATOR = ". ";
 
+@final public  int INVALID_ENTITY = 900911;
+@final public  string INVALID_ENTITY_MESSAGE = "Unprocessable entity";
+@final public  string INVALID_ENTITY_DESCRIPTION = "Please check whether the provided entity is correct.";
 
 public function getAuthenticationFailureMessage(int errorCode) returns string {
     string errorMessage;
@@ -86,6 +89,8 @@ public function getAuthenticationFailureMessage(int errorCode) returns string {
         errorMessage = SUBSCRIPTION_INACTIVE_MESSAGE;
     } else if(errorCode == INVALID_SCOPE) {
         errorMessage = INVALID_SCOPE_MESSAGE;
+    } else if(errorCode == INVALID_ENTITY) {
+        errorMessage = INVALID_ENTITY_MESSAGE;
     } else {
         errorMessage = API_AUTH_GENERAL_ERROR_MESSAGE;
     }
@@ -104,6 +109,8 @@ public function getFailureMessageDetailDescription(int errorCode, string errorMe
         errorDescription += DESCRIPTION_SEPARATOR + API_AUTH_ACCESS_TOKEN_EXPIRED_DESCRIPTION;
     } else if( API_AUTH_INVALID_CREDENTIALS == errorCode) {
         errorDescription += DESCRIPTION_SEPARATOR + API_AUTH_INVALID_CREDENTIALS_DESCRIPTION;
+    } else if(INVALID_ENTITY == errorCode) {
+        errorDescription += DESCRIPTION_SEPARATOR + INVALID_ENTITY_DESCRIPTION;
     }
     return errorDescription;
 }
