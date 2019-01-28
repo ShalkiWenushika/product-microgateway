@@ -48,7 +48,11 @@ public type ExtensionFilter object {
                         setAuthorizationErrorResponse(response, context );
                     } else if (statusCode ==  gateway:THROTTLED_OUT){
                         setThrottleFailureResponse(response, context );
-                    } else {
+                    }
+                    //else if(statusCode ==  gateway:UNPROCESSABLE_ENTITY) {
+                    //    setAuthenticationErrorResponse(response, context );
+                    //}
+                    else {
                         setGenericErrorResponse(response, context );
                     }
 

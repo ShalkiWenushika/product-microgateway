@@ -320,8 +320,11 @@ public function setErrorMessageToFilterContext(http:FilterContext context, int e
         status = FORBIDDEN;
     } else if(errorCode == INVALID_ENTITY) {
         status = UNPROCESSABLE_ENTITY;
+<<<<<<< HEAD
     } else if(errorCode == INVALID_RESPONSE) {
         status = INTERNAL_SERVER_ERROR;
+=======
+>>>>>>> b17cd1f2d334dceccf242b27e7a5d103e3b4692b
     } else {
         status = UNAUTHORIZED;
 

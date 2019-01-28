@@ -66,6 +66,7 @@
 @final public string API_AUTH_INVALID_BASICAUTH_CREDENTIALS_DESCRIPTION =
 "Make sure you have given the correct username and password";
 
+<<<<<<< HEAD
 @final public string API_AUTH_BASICAUTH_INVALID_FORMAT_STRING = "900912";
 @final public int API_AUTH_BASICAUTH_INVALID_FORMAT = 900912;
 @final public string API_AUTH_BASICAUTH_INVALID_FORMAT_STRING_MESSAGE = "Invalid Format";
@@ -91,6 +92,11 @@
 
 @final public  int INVALID_RESPONSE = 900912;
 @final public  string INVALID_RESPONSE_MESSAGE = "Unprocessable entity";
+=======
+@final public  int INVALID_ENTITY = 900911;
+@final public  string INVALID_ENTITY_MESSAGE = "Unprocessable entity";
+@final public  string INVALID_ENTITY_DESCRIPTION = "Please check whether the provided entity is correct.";
+>>>>>>> b17cd1f2d334dceccf242b27e7a5d103e3b4692b
 
 public function getAuthenticationFailureMessage(int errorCode) returns string {
     string errorMessage;
@@ -118,6 +124,7 @@ public function getAuthenticationFailureMessage(int errorCode) returns string {
         errorMessage = INVALID_SCOPE_MESSAGE;
     } else if(errorCode == INVALID_ENTITY) {
         errorMessage = INVALID_ENTITY_MESSAGE;
+<<<<<<< HEAD
     } else if(errorCode == INVALID_RESPONSE) {
         errorMessage = INVALID_RESPONSE_MESSAGE;
     }else {
@@ -129,6 +136,8 @@ public function getAuthenticationFailureMessage(int errorCode) returns string {
         errorMessage = API_AUTH_INVALID_COOKIE_STRING_MESSAGE;
     } else if (errorCode == API_AUTH_NO_COOKIE_PROVIDED) {
         errorMessage = API_AUTH_NO_COOKIE_PROVIDED_STRING_MESSAGE;
+=======
+>>>>>>> b17cd1f2d334dceccf242b27e7a5d103e3b4692b
     } else {
         errorMessage = API_AUTH_GENERAL_ERROR_MESSAGE;
     }
@@ -147,6 +156,7 @@ public function getFailureMessageDetailDescription(int errorCode, string errorMe
         errorDescription += DESCRIPTION_SEPARATOR + API_AUTH_ACCESS_TOKEN_EXPIRED_DESCRIPTION;
     } else if (API_AUTH_INVALID_CREDENTIALS == errorCode) {
         errorDescription += DESCRIPTION_SEPARATOR + API_AUTH_INVALID_CREDENTIALS_DESCRIPTION;
+<<<<<<< HEAD
     } else if (API_AUTH_INVALID_BASICAUTH_CREDENTIALS == errorCode) {
         errorDescription += DESCRIPTION_SEPARATOR + API_AUTH_INVALID_BASICAUTH_CREDENTIALS_DESCRIPTION;
     } else if (API_AUTH_BASICAUTH_INVALID_FORMAT == errorCode) {
@@ -157,6 +167,10 @@ public function getFailureMessageDetailDescription(int errorCode, string errorMe
         errorDescription += DESCRIPTION_SEPARATOR + API_AUTH_NO_COOKIE_PROVIDED_STRING_DESCRIPTION;
     } else {
         errorDescription += DESCRIPTION_SEPARATOR + API_AUTH_GENERAL_ERROR_MESSAGE;
+=======
+    } else if(INVALID_ENTITY == errorCode) {
+        errorDescription += DESCRIPTION_SEPARATOR + INVALID_ENTITY_DESCRIPTION;
+>>>>>>> b17cd1f2d334dceccf242b27e7a5d103e3b4692b
     }
     return errorDescription;
 }

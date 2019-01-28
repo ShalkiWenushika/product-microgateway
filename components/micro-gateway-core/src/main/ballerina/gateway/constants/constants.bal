@@ -233,6 +233,11 @@
 @final public string TYPE = "type";
 @Description { value: "Array" }
 @final public string ARRAY = "array";
+<<<<<<< HEAD
+=======
+@Description { value: "Type of the value which is validated" }
+@final public string X_VALIDATED_TYPE = "x-validatedType";
+>>>>>>> b17cd1f2d334dceccf242b27e7a5d103e3b4692b
 @Description { value: "String" }
 @final public string STRING = "string";
 @Description { value: "Integer" }
@@ -263,12 +268,15 @@
 @final public string YYYY_MM_DD = "yyyy-MM-dd";
 @Description { value: "Discriminator" }
 @final public string DISCRIMINATOR = "discriminator";
+<<<<<<< HEAD
 @Description { value: "Swagger file suffix" }
 @final public string SWAGGER = "_swagger";
 @Description { value: "Seperator" }
 @final public string SEPERATOR = ".";
 @Description { value: "Relative path for the src folder" }
 @final public string BASEPATH = "../../../src/";
+=======
+>>>>>>> b17cd1f2d334dceccf242b27e7a5d103e3b4692b
 
 
 
@@ -422,7 +430,10 @@
 @final string KEY_ANALYTICS_FILTER = "AnalyticsFilter";
 @final string KEY_MUTUAL_SSL_FILTER = "MutualSSLFilter";
 @final string KEY_VALIDATION_FILTER = "ValidationFilter";
+<<<<<<< HEAD
 @final string KEY_BASIC_AUTH_FILTER = "BasicAuthFilter";
+=======
+>>>>>>> b17cd1f2d334dceccf242b27e7a5d103e3b4692b
 @final string KEY_THROTTLE_UTIL = "ThrottleUtil";
 @final string KEY_GW_CACHE = "GatewayCache";
 @final string KEY_UTILS = "Utils";

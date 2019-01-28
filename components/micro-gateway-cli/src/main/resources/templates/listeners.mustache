@@ -53,3 +53,27 @@ endpoint gateway:APIGatewayListener apiListener {
     extensionFilter]
 };
 
+<<<<<<< HEAD
+=======
+function getAuthenticationFilter() returns gateway:AuthnFilter {
+http:AuthHandlerRegistry registry;
+// Getting basic and JWT authentication providers
+http:AuthProvider[] authProviders = gateway:getAuthProviders();
+int i = 1;
+foreach provider in authProviders {
+if (lengthof provider.id > 0) {
+registry.add(provider.id, gateway:createAuthHandler(provider));
+} else {
+registry.add(provider.scheme + "-" + i, gateway:createAuthHandler(provider));
+}
+i++;
+}
+// Adding basic and JWT authentication providers to a the handler chain
+// TODO: use http:AuthnHandlerChain once we update the Ballerina version to 0.983+
+gateway:AuthnHandlerChain authnHandlerChain = new(registry);
+// OAuth authentication handler
+gateway:OAuthnAuthenticator oauthAuthenticator = new;
+// Register OAuth authentication handler,basic and JWT authentication providers to the authentication filter
+return new gateway:AuthnFilter(oauthAuthenticator, authnHandlerChain);
+}
+>>>>>>> b17cd1f2d334dceccf242b27e7a5d103e3b4692b
